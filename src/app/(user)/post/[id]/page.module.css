@@ -1,0 +1,157 @@
+.container {
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #475569;
+}
+
+.heroActions {
+  margin-top: 1rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #334155;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.cardBadge {
+  background: #2563eb;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.cardMeta {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.cardDesc {
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.btnPrimary {
+  background: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btnPrimary:hover {
+  background: #1d4ed8;
+}
+
+.btnGhost {
+  border: 1px solid #94a3b8;
+  color: #475569;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btnGhost:hover {
+  border-color: #475569;
+  color: #1e293b;
+}
+
+.note {
+  background: #f1f5f9;
+  border-left: 4px solid #2563eb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.footerRight {
+  display: flex;
+  gap: 1rem;
+}
+
+.footerLink {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
