@@ -1,27 +1,40 @@
-"use client"
-import { create } from "zustand"
-import axios from "axios"
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-type Post = { id: number; title: string; body: string }
+export type Post = {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+};
 
-type State = {
-  items: Post[]
-  loading: boolean
-  error: string | null
-  fetchData: () => Promise<void>
-}
+export function usePostStore() {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
-export const usePosts = create<State>((set) => ({
-  items: [],
-  loading: false,
-  error: null,
-  fetchData: async () => {
-    set({ loading: true, error: null })
+  const fetchPosts = async () => {
+    setLoading(true);
+    setError(null);
     try {
-      const { data } = await axios.get<Post[]>("https://jsonplaceholder.typicode.com/posts")
-      set({ items: data, loading: false })
-    } catch (err: any) {
-      set({ error: err.message, loading: false })
+      const res = await axios.get<Post[]>(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      setPosts(res.data);
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Unknown error");
+      }
+    } finally {
+      setLoading(false);
     }
-  },
-}))
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  return { posts, loading, error, fetchPosts };
+}

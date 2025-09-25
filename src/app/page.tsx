@@ -11,7 +11,7 @@ export default function HomePage() {
         <div>
           <h1 className={styles.title}>Shortcut to Post Comments</h1>
           <p className={styles.subtitle}>
-            Quick Shortcut
+            เข้าเร็วไปยังหน้า comments ของโพสต์ — พิมพ์ ID หรือเลือกจากทางลัดด้านล่าง
           </p>
         </div>
         <div className={styles.heroActions}>
@@ -20,8 +20,7 @@ export default function HomePage() {
       </header>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>click</h2>
-
+        <h2 className={styles.sectionTitle}>ทางลัดที่น่าสนใจ</h2>
         <div className={styles.grid}>
           {quickIds.map((id) => (
             <article key={id} className={styles.card}>
@@ -29,11 +28,9 @@ export default function HomePage() {
                 <div className={styles.cardBadge}>post #{id}</div>
                 <div className={styles.cardMeta}>Comments shortcut</div>
               </div>
-
               <p className={styles.cardDesc}>
-                เปิดดูคอมเมนต์ของโพสต์ <strong>#{id}</strong>
+                เปิดดูคอมเมนต์ของโพสต์ <strong>#{id}</strong> — เหมาะสำหรับตรวจงานหรือทดลอง UI ของหน้า comments
               </p>
-
               <div className={styles.cardActions}>
                 <Link href={`/post/${id}/comments`} className={styles.btnPrimary}>
                   เปิดหน้า
@@ -51,28 +48,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>คำอธิบาย & การใช้งาน</h2>
-        <div className={styles.note}>
-          <p>
-             หน้า <code>/post/[id]/comments</code> เป็น Server Component ที่ดึงข้อมูลจาก
-            <code>jsonplaceholder.typicode.com</code> (เราใช้ <code>fetch</code> แบบ no-store) — หาก
-            เกิด network error เช่น DNS/Proxy ให้ตรวจการเชื่อมต่อหรือทดสอบ API โดยตรง
-          </p>
-          <p> พิมพ์ตัวเลขในช่องด้านบนแล้วกด Go เพื่อไปยังหน้าคอมเมนต์ของโพสต์นั้น</p>
-        </div>
-      </section>
-
-      <footer className={styles.footer}>
-        <div>test</div>
-        <div className={styles.footerRight}>
-          <Link href="/post/1/comments" className={styles.footerLink}>Post 1</Link>
-          <Link href="/post/8/comments" className={styles.footerLink}>Post 8</Link>
-          <Link href="/post/10/comments" className={styles.footerLink}>Post 10</Link>
-          <Link href="/post/79/comments" className={styles.footerLink}>Post 79</Link>
-        </div>
-      </footer>
     </main>
   );
 }
