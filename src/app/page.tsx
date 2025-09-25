@@ -11,7 +11,7 @@ export default function HomePage() {
         <div>
           <h1 className={styles.title}>Shortcut to Post Comments</h1>
           <p className={styles.subtitle}>
-            เข้าเร็วไปยังหน้า comments ของโพสต์ — พิมพ์ ID หรือเลือกจากทางลัดด้านล่าง
+            Quick Shortcut
           </p>
         </div>
         <div className={styles.heroActions}>
@@ -20,7 +20,7 @@ export default function HomePage() {
       </header>
 
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>ทางลัดที่น่าสนใจ</h2>
+        <h2 className={styles.sectionTitle}>test</h2>
         <div className={styles.grid}>
           {quickIds.map((id) => (
             <article key={id} className={styles.card}>
@@ -29,7 +29,7 @@ export default function HomePage() {
                 <div className={styles.cardMeta}>Comments shortcut</div>
               </div>
               <p className={styles.cardDesc}>
-                เปิดดูคอมเมนต์ของโพสต์ <strong>#{id}</strong> — เหมาะสำหรับตรวจงานหรือทดลอง UI ของหน้า comments
+                เปิดดูคอมเมนต์ของโพสต์ <strong>#{id}</strong>
               </p>
               <div className={styles.cardActions}>
                 <Link href={`/post/${id}/comments`} className={styles.btnPrimary}>
